@@ -21,7 +21,11 @@ github.getUser(userText)
 .then(data =>{
   if(data.profile.message ==='Not Found'){
 // show alert
+
+ui.showAlert('User not Found','alert alert-danger');
+ui.clearProfile();
   }
+
   else{
    // show profile
 
@@ -31,5 +35,6 @@ github.getUser(userText)
 }
 else {
   // Clear profile
+  ui.clearProfile();
 }
 });
