@@ -1,6 +1,8 @@
 // inint github
 
 const github = new Github;
+// init UI
+const ui = new UI;
 
 // Search input
 
@@ -17,7 +19,17 @@ if(userText !==''){
 
 github.getUser(userText)
 .then(data =>{
-  console.log(data);
+  if(data.profile.message ==='Not Found'){
+// show alert
+  }
+  else{
+   // show profile
+
+   ui.showProfile(data.profile); 
+  }
 })
+}
+else {
+  // Clear profile
 }
 });
